@@ -24,13 +24,19 @@ REST Client digunakan sebagai dokumentasi API
 
 1. Lakukan clone repositori ` git clone https://github.com/dibazalfa/technical-test.git` 
 2. Jalankan command `npm install` kemudian `npm run start` pada repositori
-3. Install REST Client pada Extension VSCODE ![WhatsApp Image 2024-08-17 at 00 57 17_2dbc8c05](https://github.com/user-attachments/assets/9ca72948-0751-4bd9-85db-f2cd7727e6a3)
+3. Install REST Client pada Extension VSCODE
+
+![Install REST Client](https://github.com/user-attachments/assets/9ca72948-0751-4bd9-85db-f2cd7727e6a3)
 
 4. Buka file `users.http`
-5. Untuk melakukan testing API, tekan tulisan `Send Request` yang ada di atas setiap endpoint ![WhatsApp Image 2024-08-17 at 01 03 03_28328ba7](https://github.com/user-attachments/assets/11894676-4f7d-458e-b099-8618c140fc65)
+5. Untuk melakukan testing API, tekan tulisan `Send Request` yang ada di atas setiap endpoint
+
+![Send Request](https://github.com/user-attachments/assets/11894676-4f7d-458e-b099-8618c140fc65)
 
 6. Pastikan untuk register akun terlebih dahulu pada `users.http`, kemudian login
-7. Seluruh API hanya dapat diakses ketika user sudah login. Setelah melakukan login pastikan untuk mengubah isi dari `@token` pada baris pertama menjadi token yang didapatkan dari response endpoint /auth/login ![WhatsApp Image 2024-08-17 at 01 09 04_0ee7ec98](https://github.com/user-attachments/assets/6f0e61d4-14f1-42ec-91c8-8b9de6044189) ![WhatsApp Image 2024-08-17 at 01 10 49_4e015352](https://github.com/user-attachments/assets/c223c549-1060-4075-a46f-9eebcdae4cf6)
+7. Seluruh API hanya dapat diakses ketika user sudah login. Setelah melakukan login pastikan untuk mengubah isi dari `@token` pada baris pertama menjadi token yang didapatkan dari response endpoint /auth/login
+
+![Login](https://github.com/user-attachments/assets/6f0e61d4-14f1-42ec-91c8-8b9de6044189) ![Update Token](https://github.com/user-attachments/assets/c223c549-1060-4075-a46f-9eebcdae4cf6)
 
 8. Setelah melakukan login dan mengubah token, seluruh API dapat diakses
 9. Ketika ingin mengakses API pada API projects dan tasks, silakan pindah ke file `projects.http` atau `tasks.http`
