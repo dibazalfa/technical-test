@@ -1,0 +1,82 @@
+#Change the token after login in endpoint /auth/login
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjgyYzdlNmU2LTFiOTQtNDFkYS1iNzdiLTdjNjhhYWNiNGE0MiIsImlhdCI6MTcyMzgzMDEzOCwiZXhwIjoxNzIzODMzNzM4fQ.H9DnEoDsRFivX-Kp_N5C23vi_4-3AcrNCRYMxf2vkYk
+
+### You can register a new user in users.http file
+
+### Login and Get Token
+# This endpoint logs in the user and returns a token.
+# Copy the token and use it in @token in the first line.
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "email": "user123@mail.com",
+    "password": "password123"
+}
+
+###
+
+### POST a new project
+# This endpoint creates a new project.
+POST http://localhost:3000/projects
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "name": "PROJECT 2",
+    "description": "projek tim"
+}
+
+###
+
+### GET user projects
+# This endpoint returns all projects for the logged-in user.
+GET http://localhost:3000/projects/users
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### GET all projects
+# This endpoint returns all projects of all users.
+GET http://localhost:3000/projects/all
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### GET a project
+# This endpoint returns a project by ID.
+# Change the :id by the project ID
+GET http://localhost:3000/projects/:id
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### GET a project with tasks
+# This endpoint returns a project with tasks by ID.
+GET http://localhost:3000/projects/:id/tasks
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Update a project by ID
+# This endpoint updates a project by ID.
+PUT http://localhost:3000/projects/:id
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "name": "PROJECT 1 Updated",
+    "description": "Deskripsi Project Updated"
+}
+
+###
+
+### Delete a project by ID
+# This endpoint deletes a project by ID.
+DELETE http://localhost:3000/projects/:id
+Content-Type: application/json
+Authorization: Bearer {{token}}

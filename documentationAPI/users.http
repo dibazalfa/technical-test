@@ -1,0 +1,57 @@
+#Change the token after login in endpoint /auth/login
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjgyYzdlNmU2LTFiOTQtNDFkYS1iNzdiLTdjNjhhYWNiNGE0MiIsImlhdCI6MTcyMzgzMDEzOCwiZXhwIjoxNzIzODMzNzM4fQ.H9DnEoDsRFivX-Kp_N5C23vi_4-3AcrNCRYMxf2vkYk
+
+### Register a New User
+# This endpoint registers a new user with the provided data.
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+    "firstname": "User",
+    "lastname": "123",
+    "email": "user123@mail.com",
+    "password": "password123"
+}
+
+###
+
+### Login and Get Token
+# This endpoint logs in the user and returns a token.
+# Copy the token and use it in @token in the first line.
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "email": "user123@mail.com",
+    "password": "password123"
+}
+
+###
+
+### GET current user
+# This endpoint returns the current user data.
+GET http://localhost:3000/users
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Update User
+# This endpoint updates the user data.
+# You can update all the data or just some of it.
+# The KEY "avatar" is used to upload a avatar with VALUE file (if you use postman) or text with a path of the file.
+PUT http://localhost:3000/users
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "lastname": "456"
+}
+
+###
+
+### Delete User
+# This endpoint deletes the user.
+DELETE http://localhost:3000/users
+Content-Type: application/json
+Authorization: Bearer {{token}}

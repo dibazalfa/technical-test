@@ -1,0 +1,78 @@
+#Change the token after login in endpoint /auth/login
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjgyYzdlNmU2LTFiOTQtNDFkYS1iNzdiLTdjNjhhYWNiNGE0MiIsImlhdCI6MTcyMzgzMDU2OCwiZXhwIjoxNzIzODM0MTY4fQ.4yXIhxtYk4breEvor-1SO3K6Xtayc2SnZP0h9ID1ZIw
+
+### You can register a new user in users.http file
+
+### Login and Get Token
+# This endpoint logs in the user and returns a token.
+# Copy the token and use it in @token in the first line.
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "email": "user123@mail.com",
+    "password": "password123"
+}
+
+###
+
+### POST a new task
+# This endpoint creates a new task.
+# Change the project_id to the project ID where the task belongs.
+# The value of assigned_to defaults to the logged-in user, you can change it when you create the task or update it later.
+POST http://localhost:3000/tasks
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "title": "tugas 1",
+    "description": "deskripsi tugas 1",
+    "status": "todo",
+    "due_date": "2022-01-01",
+    "project_id": "86552f10-ad00-4f3d-82b1-86fcdf5eb857"
+}
+
+###
+
+### GET user tasks
+# This endpoint returns all tasks for the logged-in user.
+GET http://localhost:3000/tasks/users
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### GET all tasks
+# This endpoint returns all tasks of all users.
+GET http://localhost:3000/tasks/all
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### GET a task
+# This endpoint returns a task by ID.
+GET http://localhost:3000/tasks/:id
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Update a task by ID
+# This endpoint updates a task by ID.
+PUT http://localhost:3000/tasks/:id
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "name": "Tugas 1 Updated",
+    "description": "Deskripsi Tugas 1 Updated"
+}
+
+###
+
+### Delete a task by ID
+# This endpoint deletes a task by ID.
+DELETE http://localhost:3000/tasks/:id
+Content-Type: application/json
+Authorization: Bearer {{token}}
