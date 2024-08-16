@@ -1,5 +1,5 @@
 #Change the token after login in endpoint /auth/login
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjgyYzdlNmU2LTFiOTQtNDFkYS1iNzdiLTdjNjhhYWNiNGE0MiIsImlhdCI6MTcyMzgzMDEzOCwiZXhwIjoxNzIzODMzNzM4fQ.H9DnEoDsRFivX-Kp_N5C23vi_4-3AcrNCRYMxf2vkYk
+@token = <ubah token>
 
 ### You can register a new user in users.http file
 
